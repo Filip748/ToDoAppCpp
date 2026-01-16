@@ -1,3 +1,0 @@
-/home/filip/Documents/Projects/ToDoListCpp/build/CMakeFiles/ToDoList.dir
-/home/filip/Documents/Projects/ToDoListCpp/build/CMakeFiles/edit_cache.dir
-/home/filip/Documents/Projects/ToDoListCpp/build/CMakeFiles/rebuild_cache.dir
