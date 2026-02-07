@@ -1,10 +1,17 @@
 #include <iostream>
 #include "list.hpp"
+#include <algorithm>
+
+void List::sortByPriority() {
+    sort(m_tasks.begin(), m_tasks.end(), [](Task& a, Task& b) {
+        return a.getPriority() > b.getPriority();
+    });
+}
 
 void List::addTask(const std::string& text, int priorityLevel) {
 
     m_tasks.push_back(Task(text, priorityLevel));
-
+    sortByPriority();
 }
 
 int List::findById(int id) {
@@ -40,12 +47,12 @@ void List::markAsUncompleted(int id) {
 
 void List::deleteAllCompleted() {
     std::vector<int> idToDelete;
-    for(int i = 0; i < m_tasks.size(); i++) {
+    for(long unsigned int i = 0; i < m_tasks.size(); i++) {
         if(m_tasks[i].getIsCompleted() == true) {
             idToDelete.push_back(m_tasks[i].getId());
         }
     }
-    for(int i = 0; i < idToDelete.size(); i++) {
+    for(long unsigned int i = 0; i < idToDelete.size(); i++) {
         deleteTask(idToDelete[i]);
     }
 }

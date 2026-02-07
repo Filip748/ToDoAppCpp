@@ -16,6 +16,7 @@ public:
 
     int getId() { return m_id; }
     int getIsCompleted() { return m_isCompleted; }
+    int getPriority() { return m_priorityLevel; }
 
     void completeTask(bool isCompleted);
 

@@ -10,6 +10,10 @@ public:
     List() {};
     ~List() {};
 
+    Task compPriority(Task a, Task b);
+
+    void sortByPriority();
+
     void addTask(const std::string& text, int priorityLevel);
 
     int findById(int id);

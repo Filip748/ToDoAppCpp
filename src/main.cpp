@@ -7,6 +7,8 @@ int main() {
 
     mojaLista.addTask("Kupic mleko", 1);
     mojaLista.addTask("Nauczyc sie C++", 3);
+    mojaLista.addTask("Zrobic baze danych", 44);
+    mojaLista.addTask("Nauczyc sie Javy", 2);
     
     // Wypisanie całej listy jedną linijką!
     std::cout << mojaLista; 
@@ -33,7 +35,6 @@ int main() {
 
 
 // dodac interaktywnego maina
-// dodac sortowanie po priority
 // gdy podamy taska bez priority to zeby priority = 1
 
 /*
