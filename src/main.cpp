@@ -36,4 +36,8 @@ int main() {
 // dodac sortowanie po priority
 // gdy podamy taska bez priority to zeby priority = 1
 
-// dodanie GUI
+/*
+    GUI:
+    QT / QML
+    bedziemy miec profesjonalna aplikacje fullstackowa
+*/
