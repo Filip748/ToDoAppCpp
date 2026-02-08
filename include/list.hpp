@@ -12,7 +12,7 @@ public:
      * @brief Constructor
      */
     List() {};
-
+    
     /**
      * @brief Destructor
      */
@@ -26,7 +26,7 @@ public:
     Task compPriority(Task a, Task b);
 
     /**
-     * @brief sort vector by priority
+     * @brief Sort vector by priority
      */
     void sortByPriority();
 
