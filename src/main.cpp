@@ -9,7 +9,7 @@ int main() {
     mojaLista.addTask("Nauczyc sie C++", 3);
     mojaLista.addTask("Zrobic baze danych", 44);
     mojaLista.addTask("Nauczyc sie Javy", 2);
-    
+    mojaLista.addTask("To powinna wywalic error");
     // Wypisanie całej listy jedną linijką!
     std::cout << mojaLista; 
 
@@ -35,7 +35,7 @@ int main() {
 
 
 // dodac interaktywnego maina
-// gdy podamy taska bez priority to zeby priority = 1
+// dodac dokumetacje @doxygen
 
 /*
     GUI:

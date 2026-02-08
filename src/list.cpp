@@ -64,7 +64,7 @@ std::ostream& operator<<(std::ostream& os, const List& list) {
         os << "(Lista jest pusta)\n";
     } else {
         for (const auto& task : list.m_tasks) {
-            os << task << "\n"; // Tutaj używamy operatora z Task!
+            os << task << "\n";
         }
     }
     
