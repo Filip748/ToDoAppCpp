@@ -13,11 +13,6 @@ public:
      * @brief Constructor
      */
     List() {};
-    
-    /**
-     * @brief Destructor
-     */
-    ~List() {};
 
     /**
      * @brief Sort vector by priority

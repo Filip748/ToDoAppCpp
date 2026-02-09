@@ -5,40 +5,27 @@
 int main() {
     List mojaLista;
 
-    mojaLista.addTask("Kupic mleko", 1);
-    mojaLista.addTask("Nauczyc sie C++", 3);
-    mojaLista.addTask("Zrobic baze danych", 44);
-    mojaLista.addTask("Nauczyc sie Javy", 2);
-    mojaLista.addTask("To powinna wywalic error");
-    // Wypisanie całej listy jedną linijką!
+    mojaLista.addTask("Buy a milk", 1);
+    mojaLista.addTask("Learn C++", 3);
+    mojaLista.addTask("Make a database", 44);
+    mojaLista.addTask("Learn Java", 2);
+    mojaLista.addTask("Task without priority");
+
     std::cout << mojaLista; 
 
-    // Oznaczamy zadanie ID 1 jako zrobione
+ 
     mojaLista.markAsCompleted(1);
 
-    std::cout << "\n--- Po zrobieniu zakupow ---\n";
     std::cout << mojaLista;
 
-    // Usuwanie
     mojaLista.deleteTask(2);
-    std::cout << "\n--- Po usuncie id 2 ---\n";
+
     std::cout << mojaLista;
 
-    mojaLista.addTask("Filip to giga szef", 1000);
+    mojaLista.addTask("Make a To Do App", 1000);
     mojaLista.deleteAllCompleted();
-    std::cout << "\n--- Po zrobieniu usuncie all completed ---\n";
+    std::cout << "\n--- delete all completed ---\n";
     std::cout << mojaLista;
 
     return 0;
 }
-
-
-
-// dodac interaktywnego maina
-// dodac dokumetacje @doxygen
-
-/*
-    GUI:
-    QT / QML
-    bedziemy miec profesjonalna aplikacje fullstackowa
-*/

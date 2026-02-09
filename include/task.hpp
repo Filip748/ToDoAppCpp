@@ -19,11 +19,6 @@ public:
     Task(const std::string& text, int priorityLevel);
 
     /**
-     * @brief Destructor
-     */
-    ~Task();
-
-    /**
      * @brief Getters acces to the data
      */
     int getId() const { return m_id; }

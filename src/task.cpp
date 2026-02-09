@@ -10,8 +10,6 @@ Task::Task(const std::string& text, int priorityLevel)
         s_nextId++;
     }
 
-Task::~Task() {}
-
 void Task::completeTask(bool isCompleted) {
     m_isCompleted = isCompleted;
 }
