@@ -14,54 +14,51 @@ void List::addTask(const std::string& text, int priorityLevel) {
     sortByPriority();
 }
 
-int List::findById(int id) {
-    int size = m_tasks.size();
-    for(int i = 0; i < size; i++) {
+std::optional<size_t> List::findById(int id) {
+    for(size_t i = 0; i < m_tasks.size(); i++) {
         if(m_tasks[i].getId() == id) {
             return i;
         }
     }
-    return -1;
+    return std::nullopt;
 }
 
 void List::deleteTask(int id) {
-    int i = findById(id);
-    if (i != -1) {
-        m_tasks.erase(m_tasks.begin() + i);
+    std::optional<size_t> result = findById(id);
+    if (result.has_value()) {
+        size_t index = result.value();
+        m_tasks.erase(m_tasks.begin() + index);
     }
 }
 
 void List::markAsCompleted(int id) {
-    int i = findById(id);
-    if (i != -1) {
+    std::optional<size_t> result = findById(id);
+    if (result.has_value()) {
+        size_t i = result.value();
         m_tasks[i].completeTask(true);
     }
 }
 
 void List::markAsUncompleted(int id) {
-    int i = findById(id);
-    if (i != -1) {
+    std::optional<size_t> result = findById(id);
+    if (result.has_value()) {
+        size_t i = result.value();
         m_tasks[i].completeTask(false);
     }
 }
 
 void List::deleteAllCompleted() {
-    std::vector<int> idToDelete;
-    for(long unsigned int i = 0; i < m_tasks.size(); i++) {
-        if(m_tasks[i].getIsCompleted() == true) {
-            idToDelete.push_back(m_tasks[i].getId());
-        }
-    }
-    for(long unsigned int i = 0; i < idToDelete.size(); i++) {
-        deleteTask(idToDelete[i]);
-    }
+    m_tasks.erase(
+        std::remove_if(m_tasks.begin(), m_tasks.end(),
+            [](const Task& t) { return t.getIsCompleted(); }),
+        m_tasks.end());
 }
 
 std::ostream& operator<<(std::ostream& os, const List& list) {
-    os << "\n=== TWOJA LISTA ZADAN ===\n";
+    os << "\n=== TO DO LIST ===\n";
     
     if (list.m_tasks.empty()) {
-        os << "(Lista jest pusta)\n";
+        os << "(List is empty)\n";
     } else {
         for (const auto& task : list.m_tasks) {
             os << task << "\n";

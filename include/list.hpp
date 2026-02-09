@@ -2,6 +2,7 @@
 
 #include "task.hpp"
 #include <vector>
+#include <optional>
 
 class List {
 private:
@@ -19,13 +20,6 @@ public:
     ~List() {};
 
     /**
-     * @brief comparator for sort function by priority
-     * @param a class Task
-     * @param b class Task
-     */
-    Task compPriority(Task a, Task b);
-
-    /**
      * @brief Sort vector by priority
      */
     void sortByPriority();
@@ -40,9 +34,9 @@ public:
     /**
      * @brief finds task by id
      * @param id integer
-     * @return index of the matching id, otherwise -1
+     * @return index of the matching id, otherwise nullopt
      */
-    int findById(int id);
+    std::optional<size_t> findById(int id);
 
     /**
      * @brief deletes task with wanted id

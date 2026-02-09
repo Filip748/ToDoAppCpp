@@ -26,9 +26,9 @@ public:
     /**
      * @brief Getters acces to the data
      */
-    int getId() { return m_id; }
-    int getIsCompleted() { return m_isCompleted; }
-    int getPriority() { return m_priorityLevel; }
+    int getId() const { return m_id; }
+    bool getIsCompleted() const { return m_isCompleted; }
+    int getPriority() const { return m_priorityLevel; }
 
     /**
      * @brief mark task as completed or uncompleted
