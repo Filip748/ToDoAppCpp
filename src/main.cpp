@@ -3,29 +3,29 @@
 #include "list.hpp"
 
 int main() {
-    List mojaLista;
+    List myList;
 
-    mojaLista.addTask("Buy a milk", 1);
-    mojaLista.addTask("Learn C++", 3);
-    mojaLista.addTask("Make a database", 44);
-    mojaLista.addTask("Learn Java", 2);
-    mojaLista.addTask("Task without priority");
+    myList.addTask("Buy a milk", 1);
+    myList.addTask("Learn C++", 3);
+    myList.addTask("Make a database", 44);
+    myList.addTask("Learn Java", 2);
+    myList.addTask("Task without priority");
 
-    std::cout << mojaLista; 
+    std::cout << myList; 
 
  
-    mojaLista.markAsCompleted(1);
+    myList.markAsCompleted(1);
 
-    std::cout << mojaLista;
+    std::cout << myList;
 
-    mojaLista.deleteTask(2);
+    myList.deleteTask(2);
 
-    std::cout << mojaLista;
+    std::cout << myList;
 
-    mojaLista.addTask("Make a To Do App", 1000);
-    mojaLista.deleteAllCompleted();
+    myList.addTask("Make a To Do App", 1000);
+    myList.deleteAllCompleted();
     std::cout << "\n--- delete all completed ---\n";
-    std::cout << mojaLista;
+    std::cout << myList;
 
     return 0;
 }
